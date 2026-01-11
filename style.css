@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    
+    /* BACKGROUND & FONT COLOR */
+    --primary-color: #6F00FF; 
+    --secondary-color: #F7F7F7;
+    --black-color-first: #2C2C2F;
+    --black-color-second: #060609;
+    --black-color-third: #C7C7C733;
+    --dark-grey: #777;
+    --white-color: #FFF;
+    --alice-blue: #F0F5FF;
+    --honeydew-section: #ECFCF4;
+    
+    /* FONT FAMILY */
+    --font-family: "Inter Tight", sans-serif;
+    
+    /* FONT SIZES */
+    --font-size-64px: 4rem;
+    --font-size-57px: 3.563rem;
+    --font-size-45px: 2.813rem;
+    --font-size-38px: 2.375rem;
+    --font-size-28px: 1.75rem;
+    --font-size-25px: 1.563rem;
+    --font-size-24px: 1.5rem;
+    --font-size-23px: 1.438rem;
+    --font-size-22px: 1.375rem;
+    --font-size-19px: 1.188rem;
+    --font-size-18px: 1.125rem;
+    --font-size-16px: 1rem;
+
+}
+
+/* UTILITIES SECTION */
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+img {
+    width: 100%;
+}
+
+.hero-right img {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.socials a img {
+    width: 19px;
+    margin-left: 1rem;
+    display: inline-block;
+}
+
+.logo a img {
+    width: 120px;
+    display: inline-block;
+}
+
+.services-section img {
+    width: 50px;
+    height: auto;   /* TEMPORARY FIX */
+}
+
+.services-section .services-content img {
+    width: 10px;
+    height: auto;   /* TEMPORARY FIX */
+}
+
+/* BUTTON UTILITY */
+.btn {
+  display: inline-block;
+  position: relative;
+  padding: 16px 30px;
+  border-radius: 3rem;
+  background-color: var(--primary-color);
+  color: var(--white-color); 
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: .3s ease;
+}
+
+.btn::after {
+   content: '';
+   position: absolute;
+   inset: 0;
+   background: url(assets/arrow-right.svg) no-repeat center;
+   opacity: 0;
+   transition: opacity .5s ease;
+   pointer-events: none;
+}
+
+.btn:hover {
+    color: transparent;
+}
+
+.btn:hover::after {
+    opacity: 1;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* HEADER SECTION */
+
+.head-section {
+    width: 100%;
+    padding: 10px 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.9); 
+    z-index: 10;
+}
+
+.nav-section {
+    padding: .5rem;
+}
+
+.nav-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.hamburger-menu .hamburger {
+    display: block;
+    width: 45px;
+    height: 2px;
+    margin-top: 8px;
+    background-color: var(--black-color-second);
+}
+
+/* HERO SECTION */
+
+.hero-section {
+    position: relative;
+    padding: 9rem 5% 0rem;
+    background-color: var(--white-color);
+    min-height: 70vh;
+}
+
+
+.hero-section .animation-arrow {
+   text-align: center;
+   margin-top: 3rem;
+}
+
+.hero-section .animation-arrow img {
+    display: inline-block;
+    position: relative;
+    width: 1.8rem;
+    height: auto;
+}
+
+.hero-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4rem;
+}
+
+.hero-left {
+    flex: 1 1 480px;
+}
+
+.hero-left h1 {
+    font-size: clamp(2rem, 4.5vw, 4rem);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.hero-left p {
+    font-size: clamp(1rem, 2.2vw, 1.7rem);
+    font-weight: 600;
+    max-width: 30ch;
+    margin-bottom: 1.5rem;
+}
+
+.hero-left h1 .focus-word {
+    position: relative;
+    display: inline-block;
+}
+
+.hero-left h1 .focus-word::after {
+   content: "";
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 12px;
+   background: url(assets/fav_scribbble.svg) no-repeat left bottom;
+   background-size: contain;
+   pointer-events: none;
+}
+
+.hero-right {
+    flex: 1 1 480px;
+}
+
+.hero-right img {
+    width: 100%;
+}
+
+/* SERVICES SECTION */
+
+
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 992px) {
+
+    .hero-section {
+        padding-top: 11rem 5% 4rem;
+    }
+    
+    .hero-left  {
+        text-align: center;
+        order: 2;
+    }
+
+    .hero-left p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+
+    .socials {
+        display: none;
+    }
+
+}
