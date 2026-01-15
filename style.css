@@ -118,7 +118,7 @@ a {
 
 .head-section {
     width: 100%;
-    padding: 1rem 5%;
+    padding: .8rem 5%;
     position: fixed;
     top: 0;
     left: 0;
@@ -254,7 +254,7 @@ a {
 .service-flex .service-card .service-btn::before {
     content: "";
     width: .9rem;
-    height: 1.5px;
+    height: 1.2px;
     position: absolute;
     top: 25px;
     left: 0;
@@ -326,7 +326,7 @@ a {
 
 .feature-section {
     background-color: var(--white-color);
-    padding: 1rem 5% 7rem;
+    padding: 1rem 5% 5rem;
 }
 
 .feature-section .feature-content {
@@ -387,7 +387,7 @@ a {
 .content-bottom .ctb p {
    font-size: var(--font-size-16px);
    font-weight: 500;
-   margin-bottom: .8rem;
+   margin-bottom: .9rem;
 }
 
 .content-bottom .ctb a {
@@ -403,23 +403,169 @@ a {
     margin-bottom: 1rem;
 }
 
-.content-bottom .feature-btn img {
+.ctb .feature-btn img {
     display: inline-block;
     margin-left: .2rem;
     width: 10px;
+    vertical-align: -15px; 
     transition: transform 0.25s ease;
 }
 
+.ctb .feature-btn {
+   position: relative;
+   display: inline-block;
+}
 
+.ctb .feature-btn::before {
+    content: "";
+    width: .9rem;
+    height: 1.6px;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    background-color: var(--black-color-second);
+    transition: .3s ease;
+}
+
+.ctb .feature-btn:hover::before {
+    width: 100%;
+}
+
+.ctb .feature-btn:hover img {
+  transform: translate(8px);
+  position: relative;
+}
+
+/* EXPERIENCE AND CAROUSEL SECTION  */
+
+.experience-section {
+    background-color: var(--white-color);
+    padding: 1rem 5% 7rem;
+}
+
+.experience-section .business-leads {
+    margin-bottom: 6rem;
+}
+
+.experience-section .business-leads h4 {
+    font-size: var(--font-size-25px);
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.experience-section .business-leads .grey {
+    color: var(--grey-color);
+    font-weight: 500;
+}
+
+/* Logos row */
+.experience-section .business-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    gap: 1rem;
+}
+
+.business-images .bis {
+  flex: 0 1 auto;
+}
+
+.business-images .bis img {
+    width: 100px;
+    object-fit: contain;
+}
+
+/* Experience layout */
+.experience-section .experience {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3rem;
+}
+
+.experience .experience-text {
+    flex: 1 1 480px;
+    min-width: 280px;
+}
+
+.experience .experience-card {
+    flex: 1 1 520px;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.experience .experience-text h3 {
+    font-size: var(--font-size-45px);
+    margin-bottom: 1.2rem;
+}
+
+.experience .experience-text p {
+    font-size: var(--font-size-25px);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    max-width: 32ch;
+}
+
+/* Testimonial card */
+.experience-card .card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card .card-text {
+    flex: 1 1 auto;
+    min-width: 0; /* prevents overflow in flex items */
+}
+
+.card .card-image {
+    flex: 0 0 auto;
+}
+
+.card .card-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 20rem;
+}
+
+.card-text blockquote {
+    font-size: var(--font-size-16px);
+    font-weight: 500;
+    margin-bottom: .8rem;
+}
+
+.testimonial-author .author-name {
+   font-size: var(--font-size-18px);
+   font-weight: 600;
+   margin-bottom: .6rem;
+}
+
+.testimonial-author .author-title {
+   font-size: var(--font-size-16px);
+   color: var(--dark-grey);
+   font-weight: 500;
+   margin-bottom: .6rem;
+}
 
 
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 992px) {
+
     .hero-section, 
     .feature-section,
-    .service-content .service-flex {
+    .service-content .service-flex,
+    .experience-section .experience {
         flex-direction: column;
+        align-items: stretch;
     }
 
     .hero-section {
@@ -436,12 +582,80 @@ a {
         margin-right: auto;
     }
 
+    .experience-section .experience{
+        gap: 1.25rem; /* reduce the big space on small screens */
+    }
+
+    .experience .experience-text,
+    .experience .experience-card{
+        flex: 0 1 200px;     /* stop using a fixed flex-basis when stacked */
+        min-width: 0;       /* optional: prevents weird overflow */
+    }
+
+    .experience .experience-text p {
+        max-width: 60ch; /* allow a bit wider lines on tablet */
+    }
+
+     /* Improve logo wrapping/centering */
+    .experience-section .business-images {
+         justify-content: center;
+         padding: 0;
+        gap: 1.5rem 2.5rem;
+    }
+
+    .business-images .bis img {
+        width: 120px;
+    }
+
+    /* Slightly reduce card padding */
+    .experience-card .card {
+        padding: 2.2rem 1.4rem;
+    }
 }
 
 @media screen and (max-width: 576px) {
+  /* Logos become a simple grid */
+  .experience-section .business-images {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+    align-items: center;
+  }
 
-    .socials {
-        display: none;
-    }
+  .socials {
+     display: none;
+   }
 
+  .business-images .bis img {
+    width: 120px;
+  }
+
+  /* Card becomes vertical for small screens */
+  .experience-card .card {
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+    padding: 1.6rem 1.2rem;
+    gap: 1.2rem;
+  }
+
+  .card .card-image {
+    order: -1; /* image on top */
+  }
+
+  .card .card-image img {
+    width: 96px;
+    height: 96px;
+  }
+
+  /* Reduce headline sizes slightly */
+  .experience .experience-text h3 {
+    font-size: var(--font-size-38px);
+  }
+
+  .experience .experience-text p {
+    font-size: var(--font-size-19px);
+    max-width: 40ch;
+  }
 }
