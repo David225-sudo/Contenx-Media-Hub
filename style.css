@@ -5,9 +5,10 @@
 }
 
 :root {
-    
+
     /* BACKGROUND & FONT COLOR */
     --primary-color: #6F00FF; 
+    --smoke-white: #F5F5F5;
     --secondary-color: #F7F7F7;
     --black-color-first: #2C2C2F;
     --black-color-second: #060609;
@@ -18,33 +19,56 @@
     --white-color: #FFF;
     --alice-blue: #F0F5FF;
     --honeydew-section: #ECFCF4;
-    
+
     /* FONT FAMILY */
     --font-family: "Inter Tight", sans-serif;
-    
-    /* FONT SIZES */
-    --font-size-64px: 4rem;
-    --font-size-57px: 3.563rem;
-    --font-size-45px: 2.813rem;
-    --font-size-38px: 2.375rem;
-    --font-size-28px: 1.75rem;
-    --font-size-25px: 1.563rem;
-    --font-size-24px: 1.5rem;
-    --font-size-23px: 1.438rem;
-    --font-size-22px: 1.375rem;
-    --font-size-19px: 1.188rem;
-    --font-size-18px: 1.125rem;
-    --font-size-16px: 1rem;
 
+    /* FONT SIZES */
+    --font-size-99px: clamp(3.5rem, 7vw + 0.75rem, 6.23rem);     /* 56px → 99.68px */
+    --font-size-70px: clamp(2.375rem, 5vw + 1rem, 4.375rem);     /* 38px → 70px */
+    --font-size-64px: clamp(2.375rem, 4.5vw + 0.75rem, 4rem);    /* 38px → 64px */
+    --font-size-57px: clamp(2.25rem, 4vw + 0.75rem, 3.563rem);   /* 36px → 57px */
+    --font-size-45px: clamp(2rem, 2.8vw + 0.9rem, 2.813rem);     /* 32px → 45px */
+    --font-size-38px: clamp(1.75rem, 2.4vw + 1rem, 2.375rem);    /* 28px → 38px */
+    --font-size-29px: clamp(1.375rem, 1.4vw + 1rem, 1.813rem);   /* 22px → 29px */
+    --font-size-28px: clamp(1.125rem, 1.2vw + 0.9rem, 1.75rem);  /* 18px → 28px */
+    --font-size-27px: clamp(1.0625rem, 1.1vw + 0.9rem, 1.688rem);/* 17px → 27px */
+    --font-size-26px: clamp(1.0625rem, 1vw + 0.9rem, 1.625rem);  /* 17px → 26px */
+    --font-size-25px: clamp(1rem, 0.9vw + 0.9rem, 1.563rem);     /* 16px → 25px */
+    --font-size-24px: clamp(1rem, 0.85vw + 0.9rem, 1.5rem);      /* 16px → 24px */
+    --font-size-23px: clamp(1rem, 0.8vw + 0.85rem, 1.438rem);    /* 16px → 23px */
+    --font-size-22px: clamp(1rem, 0.7vw + 0.85rem, 1.375rem);    /* 16px → 22px */
+    --font-size-20px: clamp(0.95rem, 0.6vw + 0.8rem, 1.25rem);   /* ~15px → 20px */
+    --font-size-19px: clamp(0.95rem, 0.55vw + 0.8rem, 1.188rem); /* ~15px → 19px */
+    --font-size-18px: clamp(0.95rem, 0.5vw + 0.8rem, 1.125rem);  /* ~15px → 18px */
+    --font-size-17px: clamp(0.9rem, 0.45vw + 0.78rem, 1.0625rem);/* 14.4px → 17px */
+    --font-size-16px: clamp(0.875rem, 0.35vw + 0.8rem, 1rem);    /* 14px → 16px */
+    --font-size-14px: clamp(0.8125rem, 0.25vw + 0.7575rem, 0.875rem); /* 13px → 14px */
+    --font-size-10px: clamp(0.5625rem, 0.2vw + 0.55rem, 0.625rem);/* 9px → 10px */
+
+    /* EXTRA SIZES USED IN YOUR CSS (NOW ALSO clamp()) */
+    --font-size-96px: clamp(3.5rem, 7vw + 0.75rem, 6rem);        /* 56px → 96px */
+    --font-size-15px: clamp(0.875rem, 0.25vw + 0.82rem, 0.9375rem); /* 14px → 15px */
+    --font-size-12px: clamp(0.6875rem, 0.2vw + 0.65rem, 0.75rem);   /* 11px → 12px */
+    --font-size-btn: clamp(1rem, 0.4vw + 0.9rem, 1.125rem);      /* 16px → 18px */
+
+    /* HERO-SPECIFIC (YOU HAD clamp() PLACEHOLDER HERE) */
+    --hero-h1-size: clamp(2.813rem, 4vw + 1.25rem, 4rem);        /* 45px → 64px */
 }
 
 /* UTILITIES SECTION */
 body {
   font-family: var(--font-family);
+  line-height: 1.2;
 }
 
 .container {
     max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container-small {
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -75,6 +99,10 @@ img {
     height: auto;   /* TEMPORARY FIX */
 }
 
+.grey {
+    color: var(--grey-color);
+}
+
 /* BUTTON UTILITY */
 .btn {
   display: inline-block;
@@ -84,7 +112,7 @@ img {
   background-color: var(--primary-color);
   color: var(--white-color); 
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: var(--font-size-btn);
   transition: .3s ease;
 }
 
@@ -118,7 +146,7 @@ a {
 
 .head-section {
     width: 100%;
-    padding: .8rem 5%;
+    padding: .8rem 5% 1rem;
     position: fixed;
     top: 0;
     left: 0;
@@ -151,6 +179,7 @@ a {
     position: relative;
     padding: 11rem 5% 7rem;
     background-color: var(--white-color);
+    margin-bottom: .8rem;
 }
 
 .hero-section .animation-arrow {
@@ -177,7 +206,7 @@ a {
 }
 
 .hero-left h1 {
-    font-size: var(--font-size-64px);
+    font-size: var(--hero-h1-size);
     font-weight: 600;
     margin-bottom: 1.5rem;
 }
@@ -218,30 +247,29 @@ a {
 
 .service-section {
     background-color: var(--white-color);
-    padding: 1rem 6% 7rem;
+    padding: 1rem 6%;
+    margin-bottom: 7rem;
 }
 
 .service-content .service-flex {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 60px;
-    align-items: stretch;
 }
 
 .service-flex .service-card {
-    flex: 1;
-    margin-bottom: 1.5rem;
     display: flex;
     flex-direction: column;  /* FIX FOR CARD BUTTON ALIGNMENT */
+    flex: 1;
+    margin-bottom: 1.5rem;
     min-height: 200px; 
-}
+} 
 
 .service-card .service-text {
-    flex: 1 1 auto;
+    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: baseline;   /* Test for temp changes */
+    align-items: flex-start;   /* Test for temp changes */
 }
 
 .service-card .service-text .service-btn {
@@ -326,7 +354,8 @@ a {
 
 .feature-section {
     background-color: var(--white-color);
-    padding: 1rem 5% 5rem;
+    padding: 1rem 5%;
+    margin-bottom: 5rem;
 }
 
 .feature-section .feature-content {
@@ -359,7 +388,15 @@ a {
 }
 
 .content-bottom .ctb {
+    display: flex;
+    flex-direction: column;
     flex: 1 1 200px;
+}
+
+.ctb .content-bottom-flex {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .feature-content .content-top h3 {
@@ -414,12 +451,14 @@ a {
 .ctb .feature-btn {
    position: relative;
    display: inline-block;
+   margin-top: auto;
+   width: fit-content;
 }
 
 .ctb .feature-btn::before {
     content: "";
     width: .9rem;
-    height: 1.6px;
+    height: 1.3px;
     position: absolute;
     top: 25px;
     left: 0;
@@ -440,7 +479,8 @@ a {
 
 .experience-section {
     background-color: var(--white-color);
-    padding: 1rem 5% 7rem;
+    padding: 1.5rem 5%;
+    margin-bottom: 7rem;
 }
 
 .experience-section .business-leads {
@@ -555,39 +595,399 @@ a {
    margin-bottom: .6rem;
 }
 
+/* RECENT WORK SECTION */
+
+.recent-work {
+   padding: 1rem 2%;
+   margin-bottom: 1.5rem;
+}
+
+.rcw-top .rw-text {
+    margin-bottom: 3rem;
+}
+
+.rcw-top .rw-text h3  {
+    font-size: var(--font-size-70px);
+    font-weight: 600;
+    text-align: center;
+}
+
+.rcw-top .rw-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.gallery-item {
+    width: calc(50% - 15px);
+}
+
+/* METRICS SECTION */
+
+.stats-section {
+    padding: 5rem 2%;
+    background-color: var(--primary-color);
+    background-image: linear-gradient(63deg, var(--primary-color), #483efd);
+    margin-bottom: 5rem;
+}
+
+.percent .numero {
+    display: block;
+    font-size: var(--font-size-96px);
+    font-weight: 600;
+    color: var(--white-color);
+}
+
+.percent .numero .top {
+    font-size: var(--font-size-38px);
+    font-weight: 400;
+    margin-left: 6px;
+    color: rgba(225, 225, 225, 0.6);
+}
+
+.stats-content .metrics-flex {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    padding: 0 3rem;
+    gap: 1rem;
+}
+
+.stats-content .metrics-flex p {
+   font-size: var(--font-size-17px);
+   color: var(--white-color);
+   font-weight: 500;
+   max-width: 30ch;
+}
+
+.metrics-flex .percent {
+    flex: 1.2;
+}
+
+.metrics-flex .trustpilot {
+    flex: 1;
+    padding: 2rem 0;
+    border-left: 1.5px solid rgba(225, 225, 225, 0.3);
+    min-width: 250px;
+}
+
+.trustpilot .trustpilot-content {
+    margin-left: 3rem;
+}
+
+.trustpilot-content .review {
+    margin-bottom: 1rem;
+}
+
+.trustpilot-content .score {
+    color: rgba(225, 225, 225, 0.9);
+    font-weight: 500;
+}
+
+.trustpilot .review img {
+    width: 150px;
+}
+
+.trustpilot .score .decimal {
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.trustpilot .score .date {
+   color: rgba(225, 225, 225, 0.9);
+}
+
+/* PRICING SECTION */
+.pricing-section {
+   background: var(--white-color);
+   padding: 3rem 5%;
+   margin-bottom: 6rem;
+}
+
+.pricing-text-top {
+    margin-bottom: 2rem;
+}
+
+.pricing-content .pricing-text-top h3 {
+    font-size: var(--font-size-38px);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.pricing-content .pricing-text-top p {
+    font-size: var(--font-size-27px);
+    font-weight: 550;
+    margin-bottom: 3rem;
+}
+
+/* cards pricing section */
+.pricing-content .pricing-card-flex {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.pricing-card-flex .pricing-card {
+    background: var(--white-color);
+    box-shadow: 0px 10px 26px rgba(0, 0, 0, 0.12);
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.pricing-card-flex .prices-2 {
+    position: relative;
+    border: 2px solid var(--primary-color);
+}
+
+.pricing-card-flex .prices-2::after {
+    content: "Most Popular";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 10px 15px; 
+    background-color: #6F00FF;
+    font-size: var(--font-size-12px);
+    font-weight: 600;
+    color: var(--white-color);
+    border-radius: 1.5rem;
+}
+
+.pricing-card .price-text h4 {
+    font-size: var(--font-size-29px);
+    font-weight: 600;
+    margin-bottom: .8rem;
+}
+
+.pricing-card .price-text .first {
+    font-size: var(--font-size-17px);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-card .price-text  .second {
+    font-size: var(--font-size-17px);
+    font-weight: 600;
+    margin-bottom: .9rem;
+}
+
+.pricing-card .pricing-card_features {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: .40rem;
+    margin-bottom: 1.35rem;
+}
+
+.pricing-card .pricing-card_features li {
+    display: flex;
+    align-items: flex-start;
+    font-size: var(--font-size-15px);
+    font-weight: 500;
+    padding: .2rem;
+}
+
+.pricing-card .pricing-card_features .check {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
+    width: 22px;
+}
+
+.pricing-card-flex .pricing-card_btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(224, 224, 224, 0.4);
+    padding: 1.063rem 6rem;
+    border-radius: 35px;
+    margin-top: auto;
+    color: var(--black-color-second);
+    font-weight: 600;
+    transition: .5s all ease;
+    white-space: nowrap;
+}
+
+.pricing-card-flex .pricing-card_btn:hover {
+  background-color: var(--black-color-first);
+  color: var(--secondary-color);
+}
+
+/* FOOTER SECTION */
+
+.footer-section {
+   background: var(--smoke-white);
+   padding: 7rem 5% 5rem; 
+}
+
+.footer-content .footer-content-bottom {
+   margin-bottom: 2rem;
+}
+ 
+.footer-content .footer-content-top {
+    text-align: center;
+}
+
+.footer-content .footer-content-top h2 {
+    font-size: var(--font-size-99px);
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.footer-content .footer-content-top {
+    margin-bottom: 8rem;
+}
+
+.footer-content .footer-content-top .footer-btn {
+   font-size: var(--font-size-19px);
+}
+
+.footer-content .footer-content-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+/* footer left */
+.visit-us .visit {
+    border: 2px solid var(--black-color-first);
+    text-transform: uppercase;
+    font-size: var(--font-size-14px);
+    font-weight: 700;
+    border-radius: 5rem;
+    padding: .7rem 1rem;
+    width: fit-content;
+    margin-bottom: 2rem;
+}
+
+.address-contact .city {
+    position: relative;
+    font-size: var(--font-size-17px);
+    font-weight: 600;
+    margin-bottom: 2rem;
+    width: fit-content;
+}
+
+.address-contact .city::after {
+    position: absolute;
+    content: "";
+    top: 25px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--black-color-second);
+}
+
+.address-contact .address {
+    font-size: var(--font-size-17px);
+    font-weight: 600;
+    margin-bottom: 2rem;
+    width: 20ch;
+}
+
+/* footer right */
+.contact .number {
+    position: relative;
+    font-size: var(--font-size-17px);
+    font-weight: 600;
+    margin-bottom: 2rem;
+    width: fit-content;
+}
+
+.contact .number::after {
+    position: absolute;
+    content: "";
+    top: 25px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--black-color-second);
+}
+
+.contact .email {
+    position: relative;
+    font-size: var(--font-size-17px);
+    font-weight: 600;
+    margin-bottom: 2rem;
+    width: fit-content;
+}
+
+.contact .email::after {
+    position: absolute;
+    content: "";
+    top: 25px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--black-color-second);
+}
 
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 992px) {
 
-    .hero-section, 
     .feature-section,
-    .service-content .service-flex,
+    .footer-section,
     .experience-section .experience {
         flex-direction: column;
-        align-items: stretch;
+        align-items: center;
     }
 
+    /* head media query section */
+    .head-section {
+      padding: .9rem .6rem;
+    }
+
+    /* hero media query section */
     .hero-section {
-        padding-top: 11rem 5% 4rem;
+        padding: 9rem 5% 1rem;
     }
-    
-    .hero-left  {
+
+    .hero-left {
+       flex: 1 1 200px;
+    }
+
+    .hero-right {
+       flex: 1 1 200px;
+    }
+
+    .hero-flex{
+        flex-direction: column-reverse;
+        align-items: center;
         text-align: center;
-        order: 2;
     }
+
+    .hero-left h1 {
+        font-size: var(--font-size-45px);
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+   }
 
     .hero-left p {
+        font-size: var(--font-size-23px);
         margin-left: auto;
         margin-right: auto;
     }
 
-    .experience-section .experience{
+    /* service media query section */
+    .service-content .service-flex {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 60px;
+    }
+
+     /* experience media query section */
+    .experience-section .experience {
         gap: 1.25rem; /* reduce the big space on small screens */
     }
 
     .experience .experience-text,
-    .experience .experience-card{
+    .experience .experience-card {
         flex: 0 1 200px;     /* stop using a fixed flex-basis when stacked */
         min-width: 0;       /* optional: prevents weird overflow */
     }
@@ -596,36 +996,87 @@ a {
         max-width: 60ch; /* allow a bit wider lines on tablet */
     }
 
-     /* Improve logo wrapping/centering */
+     /* improve logo wrapping/centering */
     .experience-section .business-images {
          justify-content: center;
          padding: 0;
-        gap: 1.5rem 2.5rem;
+         gap: 1.5rem 2.5rem;
     }
 
     .business-images .bis img {
         width: 120px;
     }
 
-    /* Slightly reduce card padding */
+    /* slightly reduce card padding */
     .experience-card .card {
+        background-color: var(--white-color);
         padding: 2.2rem 1.4rem;
+    }
+
+    .percent .numero {
+        font-size: var(--font-size-70px);
+    }
+
+    .rcw-top .rw-text h3  {
+        font-size: var(--font-size-64px);
+     }
+
+    .percent .numero .top {
+        font-size: var(--font-size-25px);
+     }
+
+    /* recent work media query section */
+    .rcw-top .rw-text h3  {
+        font-size: var(--font-size-38px);
+    }
+
+    /* stats media query section */
+    .stats-content .metrics-flex {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .metrics-flex .trustpilot {
+      margin-top: 1rem;
+      border-left: 0;
+      padding: 0;
+    }
+
+    .trustpilot .trustpilot-content {
+        margin-left: 0;
+    }
+
+    /* card media query section */
+    .pricing-content .pricing-card-flex {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
     }
 }
 
 @media screen and (max-width: 576px) {
-  /* Logos become a simple grid */
-  .experience-section .business-images {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
-    justify-items: center;
-    align-items: center;
-  }
 
-  .socials {
-     display: none;
-   }
+    /* header media query section */
+    .socials {
+        display: none;
+    }
+    /* service media query section */
+    .service-content .service-flex {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 60px;
+    }
+
+    /* experience media query section */
+    .experience-section .business-images {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+        justify-items: center;
+        align-items: center;
+    }
 
   .business-images .bis img {
     width: 120px;
@@ -649,7 +1100,7 @@ a {
     height: 96px;
   }
 
-  /* Reduce headline sizes slightly */
+  /* reduce headline sizes slightly */
   .experience .experience-text h3 {
     font-size: var(--font-size-38px);
   }
@@ -658,4 +1109,50 @@ a {
     font-size: var(--font-size-19px);
     max-width: 40ch;
   }
+
+  /* recent work section */
+  .rcw-top .rw-text h3  {
+     font-size: var(--font-size-38px);
+   }
+
+    .metrics-flex .trustpilot {
+      margin-top: 1rem;
+      padding: 0;
+      border-left: 0;
+    }
+
+    .trustpilot .trustpilot-content {
+        margin-left: 0;
+    }
+
+    /* gallery image section */
+    .gallery-item {
+        margin: 0 auto;
+        width: calc(100% - 15px);
+    }
+
+    /* recent work media query section */
+    .stats-content .metrics-flex {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        align-items: center;
+        gap: 2rem;
+    }
+
+    /* card section */
+    .pricing-content .pricing-card-flex {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 30px;
+    }
+    
+    /* footer section */
+     .footer-section,
+     .footer-content-bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 3rem 0% .5rem; 
+     }
 }
