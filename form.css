@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    /* BACKGROUND & FONT COLOR */
+    --primary-color: #6F00FF; 
+    --smoke-white: #F5F5F5;
+    --secondary-color: #F7F7F7;
+    --black-color-first: #2C2C2F;
+    --black-color-second: #060609;
+    --black-color-third: #C7C7C733;
+    --grey-color: #9E9E9E;
+    --dark-grey: #777;
+    --light-grey: #E0E0E0;
+    --white-color: #FFF;
+    --alice-blue: #F0F5FF;
+    --honeydew-section: #ECFCF4;
+
+    /* FONT FAMILY */
+    --font-family: "Inter Tight", sans-serif;
+
+    /* FONT SIZES */
+    --font-size-99px: clamp(3.5rem, 7vw + 0.75rem, 6.23rem);     /* 56px → 99.68px */
+    --font-size-70px: clamp(2.375rem, 5vw + 1rem, 4.375rem);     /* 38px → 70px */
+    --font-size-64px: clamp(2.375rem, 4.5vw + 0.75rem, 4rem);    /* 38px → 64px */
+    --font-size-57px: clamp(2.25rem, 4vw + 0.75rem, 3.563rem);   /* 36px → 57px */
+    --font-size-45px: clamp(2rem, 2.8vw + 0.9rem, 2.813rem);     /* 32px → 45px */
+    --font-size-38px: clamp(1.75rem, 2.4vw + 1rem, 2.375rem);    /* 28px → 38px */
+    --font-size-29px: clamp(1.375rem, 1.4vw + 1rem, 1.813rem);   /* 22px → 29px */
+    --font-size-28px: clamp(1.125rem, 1.2vw + 0.9rem, 1.75rem);  /* 18px → 28px */
+    --font-size-27px: clamp(1.0625rem, 1.1vw + 0.9rem, 1.688rem);/* 17px → 27px */
+    --font-size-26px: clamp(1.0625rem, 1vw + 0.9rem, 1.625rem);  /* 17px → 26px */
+    --font-size-25px: clamp(1rem, 0.9vw + 0.9rem, 1.563rem);     /* 16px → 25px */
+    --font-size-24px: clamp(1rem, 0.85vw + 0.9rem, 1.5rem);      /* 16px → 24px */
+    --font-size-23px: clamp(1rem, 0.8vw + 0.85rem, 1.438rem);    /* 16px → 23px */
+    --font-size-22px: clamp(1rem, 0.7vw + 0.85rem, 1.375rem);    /* 16px → 22px */
+    --font-size-20px: clamp(0.95rem, 0.6vw + 0.8rem, 1.25rem);   /* ~15px → 20px */
+    --font-size-19px: clamp(0.95rem, 0.55vw + 0.8rem, 1.188rem); /* ~15px → 19px */
+    --font-size-18px: clamp(0.95rem, 0.5vw + 0.8rem, 1.125rem);  /* ~15px → 18px */
+    --font-size-17px: clamp(0.9rem, 0.45vw + 0.78rem, 1.0625rem);/* 14.4px → 17px */
+    --font-size-16px: clamp(0.875rem, 0.35vw + 0.8rem, 1rem);    /* 14px → 16px */
+    --font-size-14px: clamp(0.8125rem, 0.25vw + 0.7575rem, 0.875rem); /* 13px → 14px */
+    --font-size-10px: clamp(0.5625rem, 0.2vw + 0.55rem, 0.625rem);/* 9px → 10px */
+
+    /* EXTRA SIZES USED IN YOUR CSS (NOW ALSO clamp()) */
+    --font-size-96px: clamp(3.5rem, 7vw + 0.75rem, 6rem);        /* 56px → 96px */
+    --font-size-15px: clamp(0.875rem, 0.25vw + 0.82rem, 0.9375rem); /* 14px → 15px */
+    --font-size-12px: clamp(0.6875rem, 0.2vw + 0.65rem, 0.75rem);   /* 11px → 12px */
+    --font-size-btn: clamp(1rem, 0.4vw + 0.9rem, 1.125rem);      /* 16px → 18px */
+
+    /* HERO-SPECIFIC (YOU HAD clamp() PLACEHOLDER HERE) */
+    --hero-h1-size: clamp(2.813rem, 4vw + 1.25rem, 4rem);        /* 45px → 64px */
+}
+
+/* FORM HERO_SECTION */
+
+.hero-form-section {
+    position: relative;
+    padding: 11rem 5% 9rem;
+    background-color: var(--white-color);
+    margin-bottom: .8rem;
+    background: url(images/form_banner.jpg);
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-form-section .animation-arrow {
+   text-align: center;
+   margin-top: 4rem;
+}
+
+.hero-form-section .animation-arrow img {
+    display: inline-block;
+    position: relative;
+    width: 1.8rem;
+    height: auto;
+}
+
+.hero-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4rem;
+}
+
+.hero-left {
+    flex: 1 1 480px;
+}
+
+.hero-left h1 {
+    font-size: var(--hero-h1-size);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.hero-left p {
+    font-size: var(--font-size-28px);
+    font-weight: 600;
+    max-width: 30ch;
+    margin-bottom: 1.5rem;
+}
+
+.hero-left h1 .focus-word {
+    position: relative;
+    display: inline-block;
+}
+
+.hero-left h1 .focus-word::after {
+   content: "";
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 12px;
+   background: url(assets/fav_scribbble.svg) no-repeat left bottom;
+   background-size: contain;
+   pointer-events: none;
+}
+
+.hero-right {
+    flex: 1 1 480px;
+}
+
+.hero-right img {
+    width: 100%;
+}
+
+.form-hero h1 {
+    font-size: var(--font-size-99px);
+    font-weight: 600;
+    text-align: center;
+}
+
+/* FORM SECTION */
+
+.form-entry {
+    background-color: var(--white-color);
+    padding: 130px 5%;
+}
+
+.form-entry .form-entry-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 5rem;
+}
+
+
+/* form left */ 
+
+.form-entry-left h4 {
+    font-size: var(--font-size-20px);
+    font-weight: 600;
+    margin-bottom: .8rem;
+}
+
+.form-entry-left .form-email {
+    position: relative;
+    font-size: var(--font-size-16px);
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+}
+
+.form-entry-left .form-email a {
+    color: var(--black-color-first);
+    text-decoration: underline;
+}
+
+.form-entry-left .form-address {
+    font-size: var(--font-size-18px);
+    font-weight: 500;
+    width: 30ch;
+}
+
+.form-entry-left {
+    flex: 1;
+}
+
+.form-entry-right {
+    flex: 2;
+}
+
+/* form right */
+
+.form-entry-right h3 {
+    font-size: var(--font-size-27px);
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.form-entry-right p {
+    font-size: var(--font-size-17px);
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.form-group .group {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-size: var(--font-size-15px);
+    font-weight: 600;
+}
+
+.form-group .group label{
+  white-space: nowrap; 
+  margin: 0;
+}
+
+.form-group .group > input {
+    width: 100%;
+    outline: none;
+    padding: 8px 12px 8px 0px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.form-group .group-textarea {
+    font-size: var(--font-size-15px);
+    font-weight: 600;
+    margin-bottom: .7rem;
+}
+
+.form-group .group-textarea > label {
+    display: block;
+    margin-bottom: 1.2rem;
+}
+
+.form-group .group-textarea > textarea {
+    width: 100%;
+    margin-top: 20px;
+    height: 120px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.group-form-btn {
+   text-align: center;
+}
+
+.group-form-btn .form-btn {
+    display: inline-block;
+    padding: 1.063rem 6rem;
+    border-radius: 35px;
+    font-weight: 600;
+    width: 100%;
+    transition: .5s all ease;
+    white-space: nowrap; 
+    color: var(--black-color-second);
+    background-color: rgba(224, 224, 224, 0.9);
+}
+
+.group-form-btn .form-btn:hover {
+  background-color: var(--black-color-first);
+  color: var(--secondary-color);
+}

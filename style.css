@@ -198,6 +198,7 @@ a {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    margin-bottom: 4rem;
     gap: 4rem;
 }
 
@@ -282,7 +283,7 @@ a {
 .service-flex .service-card .service-btn::before {
     content: "";
     width: .9rem;
-    height: 1.2px;
+    height: 1.5px;
     position: absolute;
     top: 25px;
     left: 0;
@@ -731,7 +732,7 @@ a {
 
 .pricing-card-flex .pricing-card {
     background: var(--white-color);
-    box-shadow: 0px 10px 26px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 10px 26px rgba(0, 0, 0, 0.30);
     padding: 3rem 2rem;
     display: flex;
     flex-direction: column;
@@ -801,7 +802,7 @@ a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(224, 224, 224, 0.4);
+    background-color: rgba(224, 224, 224, .6);
     padding: 1.063rem 6rem;
     border-radius: 35px;
     margin-top: auto;
@@ -949,11 +950,11 @@ a {
     }
 
     .hero-left {
-       flex: 1 1 200px;
+       flex: 1 1 auto;
     }
 
     .hero-right {
-       flex: 1 1 200px;
+       flex: 1 1 auto;
     }
 
     .hero-flex{
