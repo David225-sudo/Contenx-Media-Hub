@@ -107,9 +107,6 @@
   position: relative;
   width: 1.8rem;
   height: auto;
-  background-color: var(--white-color);
-  border-radius: 999px;
-  padding: 0.2rem;
 }
 
 .hero-flex {

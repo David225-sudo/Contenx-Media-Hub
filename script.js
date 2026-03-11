@@ -1,6 +1,31 @@
 document.addEventListener("DOMContentLoaded", () => {
   const toggles = document.querySelectorAll(".menu-toggle");
   const header = document.querySelector(".head-section");
+  const pageLoader = document.querySelector(".page-loader");
+
+  const showPageLoader = () => {
+    if (!(pageLoader instanceof HTMLElement)) {
+      return;
+    }
+
+    pageLoader.classList.remove("is-loaded");
+    document.body.classList.add("page-loading");
+  };
+
+  const hidePageLoader = () => {
+    if (!(pageLoader instanceof HTMLElement)) {
+      return;
+    }
+
+    pageLoader.classList.add("is-loaded");
+    document.body.classList.remove("page-loading");
+  };
+
+  window.setTimeout(() => {
+    window.requestAnimationFrame(hidePageLoader);
+  }, 180);
+
+  window.addEventListener("pageshow", hidePageLoader);
 
   toggles.forEach((toggle) => {
     const menuId = toggle.getAttribute("aria-controls");
@@ -85,6 +110,57 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       history.pushState(null, "", href);
+    });
+  });
+
+  const pageLinks = document.querySelectorAll("a[href]");
+  pageLinks.forEach((link) => {
+    if (!(link instanceof HTMLAnchorElement)) {
+      return;
+    }
+
+    link.addEventListener("click", (event) => {
+      if (
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey
+      ) {
+        return;
+      }
+
+      const href = link.getAttribute("href");
+      if (!href || href.startsWith("#") || link.target === "_blank") {
+        return;
+      }
+
+      if (link.hasAttribute("download") || /^(mailto:|tel:|javascript:)/i.test(href)) {
+        return;
+      }
+
+      const targetUrl = new URL(link.href, window.location.href);
+      const currentUrl = new URL(window.location.href);
+
+      if (targetUrl.origin !== currentUrl.origin) {
+        return;
+      }
+
+      if (
+        targetUrl.pathname === currentUrl.pathname &&
+        targetUrl.search === currentUrl.search &&
+        targetUrl.hash === currentUrl.hash
+      ) {
+        return;
+      }
+
+      event.preventDefault();
+      showPageLoader();
+
+      window.setTimeout(() => {
+        window.location.href = targetUrl.href;
+      }, 320);
     });
   });
 
