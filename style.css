@@ -79,7 +79,6 @@
   ); /* 11px → 12px */
   --font-size-btn: clamp(1rem, 0.4vw + 0.9rem, 1.125rem); /* 16px → 18px */
 
-  /* HERO-SPECIFIC (YOU HAD clamp() PLACEHOLDER HERE) */
   --hero-h1-size: clamp(2.813rem, 4vw + 1.25rem, 4rem); /* 45px → 64px */
 }
 
@@ -127,7 +126,7 @@ img {
 
 .service-card .service-count img {
   width: 60px;
-  height: auto; /* TEMPORARY FIX */
+  height: auto;
 }
 
 .grey {
@@ -339,7 +338,7 @@ a {
 
 .service-flex .service-card {
   display: flex;
-  flex-direction: column; /* FIX FOR CARD BUTTON ALIGNMENT */
+  flex-direction: column;
   flex: 1;
   margin-bottom: 1.5rem;
   min-height: 200px;
@@ -349,12 +348,12 @@ a {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Test for temp changes */
+  align-items: flex-start;
 }
 
 .service-card .service-text .service-btn {
   position: relative;
-  margin-top: auto; /* Push button to bottom */ /* FIX FOR CARD BUTTON ALIGNMENT */
+  margin-top: auto; /* Push button to bottom */
   display: inline-block;
   align-items: flex-start;
 }
@@ -1057,9 +1056,8 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-  .socials {
-    display: flex;
-    align-items: center;
+  .head-section .socials {
+    display: none;
   }
 
   .head-section {
@@ -1325,13 +1323,6 @@ a {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.25rem;
   }
-
-  .pricing-content .pricing-card-flex .pricing-card:last-child {
-    grid-column: 1 / -1;
-    justify-self: start;
-    width: 100%;
-    max-width: none;
-  }
 }
 
 /* SECTION DROPDOWN MENU */
@@ -1410,12 +1401,14 @@ a {
     top: 74px;
     height: calc(100vh - 74px);
     max-height: calc(100vh - 74px);
-    padding: 1.2rem 5% 1.2rem;
-    row-gap: 8px;
+    padding: clamp(1.5rem, 4vh, 2.5rem) 5% 1.5rem;
+    place-content: center;
+    justify-items: center;
+    row-gap: clamp(10px, 2vh, 18px);
   }
 
   .section-menu a {
-    font-size: clamp(30px, 6.8vw, 56px);
+    font-size: clamp(70px, 10vw, 90px);
   }
 }
 
@@ -1424,12 +1417,14 @@ a {
     top: 66px;
     height: calc(100vh - 66px);
     max-height: calc(100vh - 66px);
-    padding: 1rem 5% 1rem;
-    row-gap: 6px;
+    padding: clamp(1.25rem, 3.5vh, 2rem) 5% 1.25rem;
+    place-content: center;
+    justify-items: center;
+    row-gap: clamp(8px, 1.8vh, 14px);
   }
 
   .section-menu a {
-    font-size: clamp(24px, 8.8vw, 40px);
+    font-size: clamp(70px, 12vw, 90px);
     gap: 8px;
     margin: 0;
   }
@@ -1449,10 +1444,6 @@ a {
 body.menu-open {
   overflow: hidden;
 }
-
-
-
-
 
 .reveal {
   opacity: 0;
@@ -1479,8 +1470,6 @@ body.menu-open {
   }
 }
 
-
-
 @media screen and (max-width: 768px) {
   .btn::after {
     display: none;
@@ -1501,10 +1490,3 @@ body.menu-open {
     margin-left: 0;
   }
 }
-
-
-
-
-
-
-

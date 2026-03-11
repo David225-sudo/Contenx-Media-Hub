@@ -79,7 +79,6 @@
   ); /* 11px → 12px */
   --font-size-btn: clamp(1rem, 0.4vw + 0.9rem, 1.125rem); /* 16px → 18px */
 
-  /* HERO-SPECIFIC (YOU HAD clamp() PLACEHOLDER HERE) */
   --hero-h1-size: clamp(2.813rem, 4vw + 1.25rem, 4rem); /* 45px → 64px */
 }
 
