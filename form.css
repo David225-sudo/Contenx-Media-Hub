@@ -99,6 +99,8 @@
 .hero-form-section .animation-arrow {
   text-align: center;
   margin-top: 4rem;
+  display: flex;
+  justify-content: center;
 }
 
 .hero-form-section .animation-arrow img {
@@ -106,6 +108,9 @@
   position: relative;
   width: 1.8rem;
   height: auto;
+  background-color: var(--white-color);
+  border-radius: 999px;
+  padding: 0.2rem;
 }
 
 .hero-flex {
@@ -287,3 +292,5 @@
   background-color: var(--black-color-first);
   color: var(--secondary-color);
 }
+
+

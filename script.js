@@ -87,6 +87,46 @@ document.addEventListener("DOMContentLoaded", () => {
       history.pushState(null, "", href);
     });
   });
+
+  const revealTargets = document.querySelectorAll(
+    "section, .service-card, .feature-card, .card, .gallery-item, .pricing-card, .metrics-flex > *, .footer-content-top, .footer-content-bottom"
+  );
+
+  revealTargets.forEach((el, index) => {
+    if (!(el instanceof HTMLElement)) {
+      return;
+    }
+    el.classList.add("reveal");
+    el.style.transitionDelay = `${Math.min(index % 6, 5) * 60}ms`;
+  });
+
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -8% 0px",
+      }
+    );
+
+    revealTargets.forEach((el) => {
+      revealObserver.observe(el);
+    });
+  } else {
+    revealTargets.forEach((el) => {
+      el.classList.add("is-visible");
+    });
+  }
+
   const contactForm = document.getElementById("contact-form");
   if (contactForm) {
     const statusEl = document.getElementById("form-status");
@@ -130,7 +170,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (response.ok) {
           contactForm.reset();
           if (statusEl) {
-            statusEl.textContent = "Message sent successfully. We will get back to you soon.";
+            statusEl.textContent =
+              "Message sent successfully. We will get back to you soon.";
             statusEl.className = "form-status success";
           }
         } else {

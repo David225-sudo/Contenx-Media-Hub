@@ -89,6 +89,10 @@ body {
   line-height: 1.2;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -140,7 +144,10 @@ img {
   color: var(--white-color);
   font-weight: 600;
   font-size: var(--font-size-btn);
-  transition: 0.3s ease;
+  transition:
+    color 0.35s ease,
+    background-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .btn::after {
@@ -149,7 +156,10 @@ img {
   inset: 0;
   background: url(assets/arrow-right.svg) no-repeat center;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transform: translateX(-8px) scale(0.96);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
   pointer-events: none;
 }
 
@@ -159,6 +169,7 @@ img {
 
 .btn:hover::after {
   opacity: 1;
+  transform: translateX(0) scale(1);
 }
 
 li {
@@ -356,7 +367,7 @@ a {
   top: 25px;
   left: 0;
   background-color: var(--black-color-second);
-  transition: 0.3s ease;
+  transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .service-card .service-text .service-btn:hover::before {
@@ -532,7 +543,7 @@ a {
   top: 25px;
   left: 0;
   background-color: var(--black-color-second);
-  transition: 0.3s ease;
+  transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .ctb .feature-btn:hover::before {
@@ -1047,7 +1058,8 @@ a {
 
 @media screen and (max-width: 768px) {
   .socials {
-    display: none;
+    display: flex;
+    align-items: center;
   }
 
   .head-section {
@@ -1347,15 +1359,16 @@ a {
   width: 100vw;
   height: calc(100vh - 84px);
   max-height: calc(100vh - 84px);
-  overflow-y: auto;
+  overflow: hidden;
   background: #fff;
   border: 0;
   box-shadow: none;
   z-index: 9;
-  padding: clamp(6rem, 11vh, 8rem) 5% 2.5rem;
+  padding: clamp(1.25rem, 3vh, 2.25rem) 5% 1.5rem;
   counter-reset: nav-item;
   display: grid;
-  place-content: start center;
+  place-content: center;
+  row-gap: clamp(6px, 1.2vh, 12px);
 }
 
 .section-menu[hidden] {
@@ -1365,13 +1378,14 @@ a {
 .section-menu a {
   display: flex;
   align-items: center;
-  gap: clamp(10px, 1.4vw, 14px);
+  gap: clamp(12px, 1.2vw, 16px);
   color: var(--black-color-second);
-  font-size: clamp(42px, 8vw, 80px);
+  font-size: clamp(34px, 6.5vw, 76px);
   font-weight: 600;
-  line-height: 0.98;
+  line-height: 1;
   letter-spacing: -0.02em;
-  margin: clamp(6px, 1.1vh, 10px) 0;
+  margin: 0;
+  padding-block: clamp(1px, 0.25vh, 4px);
   text-decoration: none;
 }
 
@@ -1396,11 +1410,12 @@ a {
     top: 74px;
     height: calc(100vh - 74px);
     max-height: calc(100vh - 74px);
-    padding-top: 4.8rem;
+    padding: 1.2rem 5% 1.2rem;
+    row-gap: 8px;
   }
 
   .section-menu a {
-    font-size: clamp(36px, 7.5vw, 64px);
+    font-size: clamp(30px, 6.8vw, 56px);
   }
 }
 
@@ -1409,13 +1424,14 @@ a {
     top: 66px;
     height: calc(100vh - 66px);
     max-height: calc(100vh - 66px);
-    padding-top: 4rem;
+    padding: 1rem 5% 1rem;
+    row-gap: 6px;
   }
 
   .section-menu a {
-    font-size: clamp(30px, 10vw, 46px);
-    gap: 10px;
-    margin: 6px 0;
+    font-size: clamp(24px, 8.8vw, 40px);
+    gap: 8px;
+    margin: 0;
   }
 
   .section-menu a::before {
@@ -1433,4 +1449,62 @@ a {
 body.menu-open {
   overflow: hidden;
 }
+
+
+
+
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .btn::after {
+    display: none;
+  }
+
+  .btn,
+  .btn:hover {
+    color: var(--white-color);
+    transition: none;
+  }
+
+  .socials a img {
+    width: 17px;
+    margin-left: 0.55rem;
+  }
+
+  .socials a:first-child img {
+    margin-left: 0;
+  }
+}
+
+
+
+
+
+
 
