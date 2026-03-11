@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.setTimeout(() => {
     window.requestAnimationFrame(hidePageLoader);
-  }, 180);
+  }, 420);
 
   window.addEventListener("pageshow", hidePageLoader);
 
@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
         closeMenu();
+        closeGalleryLightbox();
       }
     });
   });
@@ -160,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       window.setTimeout(() => {
         window.location.href = targetUrl.href;
-      }, 320);
+      }, 700);
     });
   });
 
@@ -203,6 +204,77 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const galleryLightbox = document.getElementById("gallery-lightbox");
+  const galleryLightboxImage = document.getElementById("gallery-lightbox-image");
+  const galleryTriggers = document.querySelectorAll("[data-gallery-trigger]");
+  const galleryCloseControls = document.querySelectorAll("[data-lightbox-close]");
+  let activeGalleryTrigger = null;
+
+  const closeGalleryLightbox = () => {
+    if (
+      !(galleryLightbox instanceof HTMLElement) ||
+      !(galleryLightboxImage instanceof HTMLImageElement)
+    ) {
+      return;
+    }
+
+    galleryLightbox.hidden = true;
+    galleryLightbox.setAttribute("aria-hidden", "true");
+    galleryLightboxImage.src = "";
+    galleryLightboxImage.alt = "";
+    document.body.classList.remove("menu-open");
+
+    if (activeGalleryTrigger instanceof HTMLElement) {
+      activeGalleryTrigger.focus();
+      activeGalleryTrigger = null;
+    }
+  };
+
+  const openGalleryLightbox = (trigger) => {
+    if (
+      !(galleryLightbox instanceof HTMLElement) ||
+      !(galleryLightboxImage instanceof HTMLImageElement)
+    ) {
+      return;
+    }
+
+    const src = trigger.getAttribute("data-image-src");
+    const alt = trigger.getAttribute("data-image-alt") || "Recent work preview";
+
+    if (!src) {
+      return;
+    }
+
+    activeGalleryTrigger = trigger;
+    galleryLightboxImage.src = src;
+    galleryLightboxImage.alt = alt;
+    galleryLightbox.hidden = false;
+    galleryLightbox.setAttribute("aria-hidden", "false");
+    document.body.classList.add("menu-open");
+
+    const closeButton = galleryLightbox.querySelector(".gallery-lightbox__close");
+    if (closeButton instanceof HTMLButtonElement) {
+      closeButton.focus();
+    }
+  };
+
+  galleryTriggers.forEach((trigger) => {
+    if (!(trigger instanceof HTMLButtonElement)) {
+      return;
+    }
+
+    trigger.addEventListener("click", () => {
+      openGalleryLightbox(trigger);
+    });
+  });
+
+  galleryCloseControls.forEach((control) => {
+    if (!(control instanceof HTMLButtonElement)) {
+      return;
+    }
+
+    control.addEventListener("click", closeGalleryLightbox);
+  });
   const contactForm = document.getElementById("contact-form");
   if (contactForm) {
     const statusEl = document.getElementById("form-status");
