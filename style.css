@@ -1555,7 +1555,7 @@ body.menu-open {
   inset: 0;
   display: grid;
   place-items: center;
-  background: rgba(7, 7, 10, 0.98);
+  background: rgba(255, 255, 255, 0.96);
   z-index: 9999;
   transition: opacity 0.65s ease, visibility 0.65s ease;
 }
