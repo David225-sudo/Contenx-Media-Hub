@@ -230,8 +230,10 @@ button:focus-visible {
   height: calc(100vh - 84px);
   max-height: calc(100vh - 84px);
   overflow: hidden;
-  background: transparent;
-  backdrop-filter: none;
+  background:
+    linear-gradient(180deg, rgba(5, 5, 7, 0.72) 0%, rgba(5, 5, 7, 0.82) 100%),
+    radial-gradient(circle at top left, rgba(111, 0, 255, 0.08), transparent 26%);
+  backdrop-filter: blur(8px);
   border: 0;
   box-shadow: none;
   z-index: 9;
