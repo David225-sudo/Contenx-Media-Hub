@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggles = document.querySelectorAll(".menu-toggle");
   const header = document.querySelector(".head-section");
   const pageLoader = document.querySelector(".page-loader");
+  const pageLoaderSkipKey = "skipPageLoaderOnce";
+  const shouldSkipInitialLoader =
+    window.sessionStorage.getItem(pageLoaderSkipKey) === "true";
 
   const showPageLoader = () => {
     if (!(pageLoader instanceof HTMLElement)) {
@@ -21,11 +24,19 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.remove("page-loading");
   };
 
-  window.setTimeout(() => {
-    window.requestAnimationFrame(hidePageLoader);
-  }, 420);
+  if (shouldSkipInitialLoader) {
+    window.sessionStorage.removeItem(pageLoaderSkipKey);
+    hidePageLoader();
+  } else {
+    window.setTimeout(() => {
+      window.requestAnimationFrame(hidePageLoader);
+    }, 420);
+  }
 
-  window.addEventListener("pageshow", hidePageLoader);
+  window.addEventListener("pageshow", () => {
+    window.sessionStorage.removeItem(pageLoaderSkipKey);
+    hidePageLoader();
+  });
 
   toggles.forEach((toggle) => {
     const menuId = toggle.getAttribute("aria-controls");
@@ -156,6 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
+      window.sessionStorage.setItem(pageLoaderSkipKey, "true");
       event.preventDefault();
       showPageLoader();
 
