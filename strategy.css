@@ -681,7 +681,7 @@ main {
   }
 
   .hero-copy h1 {
-    max-width: 11ch;
+    max-width: 14ch;
   }
 
   .hero-copy > p {
@@ -689,6 +689,12 @@ main {
   }
 
   .hero-actions {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-cta {
+    width: min(100%, 24rem);
     justify-content: center;
   }
 
@@ -809,8 +815,8 @@ main {
   }
 
   .hero-copy h1 {
-    max-width: 10ch;
-    font-size: clamp(2.1rem, 9vw, 2.85rem);
+    max-width: 14ch;
+    font-size: clamp(2.1rem, 8vw, 2.85rem);
     line-height: 1.04;
   }
 
@@ -826,6 +832,7 @@ main {
 
   .hero-cta {
     width: 100%;
+    max-width: 22rem;
     justify-content: center;
     font-size: 1.05rem;
   }
