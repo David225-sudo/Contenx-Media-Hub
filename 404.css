@@ -1,0 +1,219 @@
+.error-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top right, rgba(111, 0, 255, 0.14), transparent 28rem),
+    linear-gradient(180deg, #ffffff 0%, #f8f6ff 100%);
+  color: var(--black-color-second);
+}
+
+.error-main {
+  min-height: 100vh;
+}
+
+.error-hero {
+  min-height: 100vh;
+  padding: 10.5rem 5% 5rem;
+  display: flex;
+  align-items: center;
+}
+
+.error-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.error-copy,
+.error-card {
+  min-width: 0;
+}
+
+.error-kicker {
+  margin-bottom: 1rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--grey-color);
+}
+
+.error-copy h1 {
+  max-width: 9ch;
+  margin-bottom: 1.5rem;
+  font-size: clamp(3.2rem, 6vw, 5.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.error-summary {
+  max-width: 33rem;
+  margin-bottom: 2rem;
+  font-size: clamp(1.1rem, 0.9vw + 0.95rem, 1.45rem);
+  line-height: 1.55;
+  color: var(--black-color-first);
+}
+
+.error-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.25rem;
+}
+
+.error-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--font-size-18px);
+  font-weight: 600;
+  color: var(--black-color-second);
+}
+
+.error-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.25rem;
+  width: 100%;
+  height: 1.5px;
+  background-color: currentColor;
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.error-link:hover::after {
+  transform: scaleX(1.08);
+}
+
+.error-card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2rem, 4vw, 3rem);
+  border: 1px solid rgba(6, 6, 9, 0.08);
+  border-radius: 2rem;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(247, 247, 247, 0.88));
+  box-shadow: 0 28px 60px rgba(15, 15, 24, 0.08);
+}
+
+.error-card::before {
+  content: "";
+  position: absolute;
+  inset: auto -4rem -5rem auto;
+  width: 14rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(111, 0, 255, 0.18), transparent 68%);
+}
+
+.error-mark {
+  margin-bottom: 1rem;
+  font-size: clamp(5rem, 11vw, 8rem);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.error-card-text {
+  max-width: 24rem;
+  margin-bottom: 1.5rem;
+  font-size: var(--font-size-20px);
+  line-height: 1.5;
+  color: var(--black-color-first);
+}
+
+.error-shortcuts {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.error-shortcuts a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: fit-content;
+  font-size: var(--font-size-18px);
+  font-weight: 600;
+  color: var(--black-color-second);
+}
+
+.error-shortcuts a::before {
+  content: "";
+  width: 0.85rem;
+  height: 1.5px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.error-shortcuts a:hover::before {
+  width: 1.35rem;
+}
+
+@media screen and (max-width: 900px) {
+  .error-hero {
+    padding-top: 9rem;
+  }
+
+  .error-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .error-copy {
+    text-align: center;
+  }
+
+  .error-copy h1,
+  .error-summary {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .error-actions {
+    justify-content: center;
+  }
+
+  .error-card {
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .error-hero {
+    padding: 7.5rem 5% 3.5rem;
+  }
+
+  .error-copy h1 {
+    max-width: 11ch;
+    font-size: clamp(2.7rem, 12vw, 4rem);
+  }
+
+  .error-summary {
+    font-size: 1rem;
+  }
+
+  .error-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .error-actions .btn,
+  .error-link {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .error-card {
+    border-radius: 1.5rem;
+  }
+
+  .error-mark {
+    font-size: clamp(4.6rem, 24vw, 6.4rem);
+  }
+
+  .error-shortcuts a {
+    width: 100%;
+  }
+}
