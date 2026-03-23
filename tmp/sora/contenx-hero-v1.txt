@@ -1,0 +1,13 @@
+Use case: landing page hero video for a growth-focused digital marketing agency
+Primary request: a premium abstract motion-graphics hero clip that communicates strategy, SEO, analytics, and campaign growth for Contenx Media Hub
+Scene/background: a clean editorial studio space made of floating translucent interface panels and glassy data surfaces, bright off-white background fading into soft charcoal depth
+Subject: a sculptural cluster of sleek dashboard cards, chart lines, search-inspired interface shapes, and glowing data paths
+Action: beat 1 (0-2s) translucent panels assemble smoothly from light haze into an organized stack; beat 2 (2-4s) one luminous growth line rises through the composition while smaller analytics elements pulse subtly and the layout settles into a polished final frame
+Camera: 35mm medium-wide shot, slow push-in with a slight right-to-left orbit, smooth cinematic motion, deep enough focus to keep the whole composition readable
+Lighting/mood: soft studio key light, subtle purple edge light, crisp premium tech mood, confident and optimistic
+Color palette: vivid purple, smoke white, charcoal black, cool silver, pale blue
+Style/format: refined 3D motion design, high-end brand film, clean UI-inspired shapes, minimal and modern
+Timing/beats: one clear assembly beat followed by one clear growth beat, loop-friendly ending
+Audio: soft airy synth pulse and subtle digital ambience, no voiceover
+Constraints: no people, no faces, no logos, no copyrighted characters, no readable UI text, safe for all ages, suitable as a looping website hero
+Avoid: clutter, noisy backgrounds, flicker, jitter, fast motion, warped interface elements, illegible text

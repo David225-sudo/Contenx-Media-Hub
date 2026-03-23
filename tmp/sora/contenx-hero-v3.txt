@@ -1,0 +1,13 @@
+Use case: landing page hero video for a growth-focused digital marketing agency
+Primary request: the same hero shot, framing, and palette, but make the marketing story clearer through search and reporting cues
+Scene/background: the same clean editorial studio space, with subtle floating interface hints that suggest search visibility and campaign reporting
+Subject: the same sculptural dashboard cluster, now featuring a simple search-bar silhouette, a clean bar chart block, and a rising ROI curve integrated into the design
+Action: keep the same calm two-beat structure; in the final two seconds, the search cue and chart block align neatly as the main growth curve completes its rise
+Camera: same 35mm medium-wide shot, same slow push-in, same slight orbit
+Lighting/mood: same premium studio lighting with subtle purple edge light
+Color palette: vivid purple, smoke white, charcoal black, cool silver, pale blue
+Style/format: refined 3D brand motion, editorial tech aesthetic, minimal but informative
+Timing/beats: same timing and pacing as the original, with the extra storytelling cues appearing only as part of the same composition
+Audio: same soft airy synth pulse and subtle digital ambience
+Constraints: keep the composition premium and uncluttered; no people, no logos, no readable text, no platform-specific branding
+Avoid: crowded UI, flashy transitions, flicker, jitter, fast motion, literal social media logos

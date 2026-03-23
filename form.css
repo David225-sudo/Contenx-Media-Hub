@@ -285,4 +285,137 @@
   color: var(--secondary-color);
 }
 
+.form-entry-left,
+.form-entry-right {
+  min-width: 0;
+}
+
+.group-form-btn .form-btn {
+  max-width: 360px;
+}
+
+.form-status {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: var(--font-size-16px);
+  font-weight: 600;
+}
+
+.form-status.success {
+  color: #138a4b;
+}
+
+.form-status.error {
+  color: #b42318;
+}
+
+@media screen and (max-width: 1024px) {
+  .hero-form-section {
+    padding: 9.5rem 4% 6rem;
+  }
+
+  .form-entry {
+    padding: 5.5rem 4%;
+  }
+
+  .form-entry .form-entry-flex {
+    gap: 3rem;
+  }
+
+  .form-entry-left {
+    flex: 1 1 240px;
+  }
+
+  .form-entry-right {
+    flex: 1 1 480px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-form-section {
+    padding: 8.5rem 4% 4.5rem;
+  }
+
+  .hero-form-section .animation-arrow {
+    margin-top: 3rem;
+  }
+
+  .form-hero h1 {
+    font-size: var(--font-size-70px);
+  }
+
+  .form-entry {
+    padding: 4.5rem 4%;
+  }
+
+  .form-entry .form-entry-flex {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .form-entry-left,
+  .form-entry-right {
+    width: 100%;
+    flex: 1 1 auto;
+  }
+
+  .form-entry-left,
+  .form-entry-right h3,
+  .form-entry-right p {
+    text-align: center;
+  }
+
+  .form-entry-left .form-email,
+  .form-entry-left .form-address {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .group-form-btn {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .hero-form-section {
+    padding: 7.5rem 5% 4rem;
+  }
+
+  .hero-form-section .animation-arrow {
+    margin-top: 2.5rem;
+  }
+
+  .form-entry {
+    padding: 4rem 5%;
+  }
+
+  .form-entry-left .form-address {
+    width: 100%;
+  }
+
+  .form-group .group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .form-group .group label,
+  .form-group .group-textarea > label {
+    font-size: var(--font-size-14px);
+  }
+
+  .form-group .group > input {
+    padding: 0.75rem 0;
+  }
+
+  .form-group .group-textarea > textarea {
+    margin-top: 0;
+    height: 140px;
+  }
+
+  .group-form-btn .form-btn {
+    padding: 1rem 1.5rem;
+    max-width: 320px;
+  }
+}
 

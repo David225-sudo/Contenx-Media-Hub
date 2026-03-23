@@ -1,0 +1,13 @@
+Use case: landing page hero video for a growth-focused digital marketing agency
+Primary request: the same hero shot and same camera move, but with a cleaner composition and a more premium brand-forward look
+Scene/background: the same bright editorial studio space with fewer floating panels and more open negative space
+Subject: the same sculptural dashboard cluster, simplified into three to four hero panels with one dominant growth curve
+Action: keep the same two-beat structure; reduce secondary motion so the main rising curve feels more deliberate and elegant
+Camera: same 35mm medium-wide shot, same slow push-in, same slight orbit
+Lighting/mood: stronger soft purple rim light, cleaner highlights, more luxurious and controlled
+Color palette: vivid purple, smoke white, charcoal black, brushed silver
+Style/format: polished brand film, minimal 3D motion design, high clarity
+Timing/beats: same timing and pacing as the original
+Audio: same soft airy synth pulse and subtle digital ambience
+Constraints: keep the base composition and framing; remove visual noise; no people, no logos, no readable text
+Avoid: busy interfaces, excess particles, fast motion, flicker, jitter

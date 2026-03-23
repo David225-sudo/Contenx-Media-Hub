@@ -1,0 +1,8 @@
+{
+  "model": "sora-2-pro",
+  "size": "1280x720",
+  "seconds": "4",
+  "prompt_file": "tmp/sora/contenx-hero-v1.txt",
+  "no_augment": true,
+  "intended_use": "Contenx Media Hub landing-page hero video"
+}
