@@ -4,6 +4,7 @@
     radial-gradient(circle at top right, rgba(111, 0, 255, 0.14), transparent 28rem),
     linear-gradient(180deg, #ffffff 0%, #f8f6ff 100%);
   color: var(--black-color-second);
+  overflow-x: hidden;
 }
 
 .error-main {
@@ -44,6 +45,7 @@
   font-size: clamp(3.2rem, 6vw, 5.8rem);
   line-height: 0.98;
   letter-spacing: -0.045em;
+  text-wrap: balance;
 }
 
 .error-summary {
@@ -52,6 +54,7 @@
   font-size: clamp(1.1rem, 0.9vw + 0.95rem, 1.45rem);
   line-height: 1.55;
   color: var(--black-color-first);
+  text-wrap: pretty;
 }
 
 .error-actions {

@@ -30,6 +30,7 @@ body {
   font-family: var(--font-family);
   background-color: var(--bg-page);
   color: var(--text-primary);
+  overflow-x: hidden;
 }
 
 body.page-loading,
@@ -130,7 +131,7 @@ button:focus-visible {
 
 .head-section {
   width: 100%;
-  padding: 0.8rem 5% 1rem;
+  padding: 0.8rem 0 1rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -139,7 +140,9 @@ button:focus-visible {
 }
 
 .nav-section {
-  padding: 10px 5%;
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 10px 0;
   position: relative;
 }
 
@@ -329,6 +332,7 @@ main {
   line-height: 1.02;
   letter-spacing: -0.035em;
   max-width: 13ch;
+  text-wrap: balance;
 }
 
 .hero-copy > p,
@@ -341,6 +345,7 @@ main {
   font-size: var(--body-size);
   line-height: 1.7;
   color: var(--text-secondary);
+  text-wrap: pretty;
 }
 
 .hero-copy > p {
@@ -455,6 +460,7 @@ main {
   font-size: var(--heading-size);
   line-height: 1;
   letter-spacing: -0.03em;
+  text-wrap: balance;
 }
 
 .split-copy ul {
@@ -621,29 +627,55 @@ main {
   color: var(--text-secondary);
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1074px) {
+  .hero-section {
+    padding: 8.75rem 0 4.75rem;
+  }
+
   .hero-flex {
     grid-template-columns: 1fr;
-    gap: 2.75rem;
+    gap: 3rem;
   }
 
   .hero-visual {
-    order: 1;
+    order: 2;
+    width: min(100%, 34rem);
+    justify-self: center;
   }
 
   .hero-copy {
-    order: 2;
-    max-width: 42rem;
+    order: 1;
+    width: 100%;
+    max-width: min(100%, 48rem);
     justify-self: center;
+    justify-items: center;
+    text-align: center;
+    gap: 1.5rem;
   }
 
   .hero-visual {
     min-height: auto;
-    min-height: 24rem;
+    min-height: 22rem;
   }
 
   .hero-copy h1 {
-    max-width: 10.5ch;
+    max-width: 13ch;
+  }
+
+  .hero-copy > p {
+    max-width: 38rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-cta {
+    width: min(100%, 26rem);
+    justify-content: center;
   }
 }
 
@@ -718,12 +750,8 @@ main {
 }
 
 @media (max-width: 768px) {
-  .head-section {
-    padding-inline: 4%;
-  }
-
   .nav-section {
-    padding-inline: 4%;
+    width: min(100%, calc(100% - 1.5rem));
   }
 
   .socials {
@@ -745,7 +773,7 @@ main {
     width: min(100%, 360px);
     justify-content: flex-start;
     margin: 0 auto;
-    font-size: clamp(58px, 9vw, 82px);
+    font-size: clamp(42px, 7vw, 58px);
   }
 
   .section-menu a::before {
@@ -774,17 +802,18 @@ main {
 }
 
 @media (max-width: 540px) {
-  .container,
-  .container-small {
-    width: min(100%, calc(100% - 1.25rem));
-  }
-
   .head-section {
     padding: 0.7rem 0.85rem;
   }
 
+  .container,
+  .container-small,
   .nav-section {
-    padding: 10px 5%;
+    width: min(100%, calc(100% - 1.25rem));
+  }
+
+  .nav-section {
+    padding: 10px 0;
   }
 
   .menu-toggle {
@@ -905,6 +934,6 @@ main {
   .section-menu a {
     width: min(100%, 320px);
     gap: 0.75rem;
-    font-size: clamp(48px, 12vw, 70px);
+    font-size: clamp(34px, 9vw, 46px);
   }
 }

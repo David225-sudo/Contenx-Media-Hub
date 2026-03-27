@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggles = document.querySelectorAll(".menu-toggle");
   const header = document.querySelector(".head-section");
   const pageLoader = document.querySelector(".page-loader");
+  const backToTopButton = document.getElementById("back-to-top");
 
   const showPageLoader = () => {
     if (!(pageLoader instanceof HTMLElement)) {
@@ -26,6 +27,37 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 420);
 
   window.addEventListener("pageshow", hidePageLoader);
+
+  const syncBackToTopButton = () => {
+    if (!(backToTopButton instanceof HTMLButtonElement)) {
+      return;
+    }
+
+    const doc = document.documentElement;
+    const revealOffset = Math.max(180, window.innerHeight * 0.15);
+    const isNearBottom =
+      window.scrollY + window.innerHeight >= doc.scrollHeight - revealOffset;
+
+    backToTopButton.hidden = !isNearBottom;
+    backToTopButton.classList.toggle("is-visible", isNearBottom);
+  };
+
+  if (backToTopButton instanceof HTMLButtonElement) {
+    backToTopButton.addEventListener("click", () => {
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      window.scrollTo({
+        top: 0,
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+      });
+    });
+
+    window.addEventListener("scroll", syncBackToTopButton, { passive: true });
+    window.addEventListener("resize", syncBackToTopButton);
+    syncBackToTopButton();
+  }
 
   toggles.forEach((toggle) => {
     const menuId = toggle.getAttribute("aria-controls");
