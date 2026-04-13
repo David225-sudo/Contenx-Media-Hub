@@ -715,6 +715,15 @@ textarea:focus-visible {
   );
 }
 
+.business-marquee {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  width: max-content;
+  animation: businessLogoMarquee 30s linear infinite;
+  will-change: transform;
+}
+
 .business-track {
   display: flex;
   align-items: center;
@@ -722,11 +731,9 @@ textarea:focus-visible {
   min-width: max-content;
   gap: clamp(2.5rem, 5vw, 4.5rem);
   padding-right: clamp(2.5rem, 5vw, 4.5rem);
-  animation: businessLogoMarquee 30s linear infinite;
-  will-change: transform;
 }
 
-.business-images:hover .business-track {
+.business-images:hover .business-marquee {
   animation-play-state: paused;
 }
 
@@ -755,7 +762,7 @@ textarea:focus-visible {
   }
 
   to {
-    transform: translateX(calc(-100% - clamp(2.5rem, 5vw, 4.5rem)));
+    transform: translateX(-50%);
   }
 }
 
@@ -2038,12 +2045,16 @@ body.page-loading {
     overflow: visible;
     mask-image: none;
     justify-content: center;
+  }
+
+  .business-marquee {
+    animation: none;
+    width: 100%;
     flex-wrap: wrap;
-    gap: 1rem 1.5rem;
+    justify-content: center;
   }
 
   .business-track {
-    animation: none;
     min-width: 0;
     flex-wrap: wrap;
     justify-content: center;
