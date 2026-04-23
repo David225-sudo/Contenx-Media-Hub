@@ -1587,9 +1587,25 @@ textarea:focus-visible {
     padding: 0;
   }
 
+  .experience-section .business-leads h4 {
+    font-size: clamp(1.45rem, 4vw, 2.05rem);
+    line-height: 1.12;
+    max-width: 18ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .business-track {
     gap: 2rem;
     padding-right: 2rem;
+  }
+
+  .business-images .bis img {
+    width: clamp(92px, 18vw, 126px);
+  }
+
+  .business-images .bis img[src*="chatgpt-logo"] {
+    width: clamp(30px, 7vw, 44px);
   }
 
   .experience-card .card {
@@ -1746,6 +1762,21 @@ textarea:focus-visible {
   .business-track {
     gap: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .experience-section .business-leads h4 {
+    font-size: clamp(1.55rem, 7vw, 2.15rem);
+    line-height: 1.1;
+    max-width: 14ch;
+    margin-bottom: 2.4rem;
+  }
+
+  .business-images .bis img {
+    width: clamp(78px, 30vw, 108px);
+  }
+
+  .business-images .bis img[src*="chatgpt-logo"] {
+    width: clamp(24px, 10vw, 36px);
   }
 }
 
