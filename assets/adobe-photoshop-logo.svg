@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 72" role="img" aria-labelledby="title">
+  <title id="title">Adobe Photoshop</title>
+  <rect width="220" height="72" fill="none"/>
+  <g transform="translate(18 12)">
+    <rect width="48" height="48" rx="10" fill="#001e36"/>
+    <text x="10" y="34" fill="#31a8ff" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="800">Ps</text>
+  </g>
+  <text x="84" y="34" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800">Adobe</text>
+  <text x="84" y="55" fill="#555" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Photoshop</text>
+</svg>

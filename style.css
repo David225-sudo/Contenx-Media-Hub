@@ -745,10 +745,14 @@ textarea:focus-visible {
 }
 
 .business-images .bis img {
-  width: clamp(84px, 8vw, 110px);
+  width: clamp(118px, 10.5vw, 160px);
   object-fit: contain;
   opacity: 0.88;
   transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.business-images .bis img[src*="chatgpt-logo"] {
+  width: clamp(36px, 3.6vw, 52px);
 }
 
 .business-images .bis:hover img {

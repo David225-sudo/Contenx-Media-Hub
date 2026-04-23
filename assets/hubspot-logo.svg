@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 120" role="img" aria-labelledby="title">
+  <title id="title">HubSpot</title>
+  <rect width="340" height="120" fill="none"/>
+  <text x="0" y="83" fill="#253746" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="700" letter-spacing="-4">HubSp</text>
+  <g transform="translate(239 19)" fill="none" stroke="#ff7a59" stroke-width="9" stroke-linecap="round">
+    <path d="M34 30 6 9"/>
+    <path d="M55 30 78 9"/>
+    <path d="M43 47v28"/>
+  </g>
+  <circle cx="282" cy="59" r="24" fill="#ff7a59"/>
+  <circle cx="282" cy="59" r="11" fill="#fff"/>
+  <circle cx="245" cy="23" r="10" fill="#ff7a59"/>
+  <circle cx="318" cy="23" r="10" fill="#ff7a59"/>
+  <circle cx="282" cy="97" r="10" fill="#ff7a59"/>
+  <text x="308" y="83" fill="#253746" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="700" letter-spacing="-4">t</text>
+</svg>
